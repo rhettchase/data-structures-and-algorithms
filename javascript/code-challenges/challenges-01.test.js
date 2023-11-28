@@ -69,8 +69,8 @@ const greeting = (word) => {
 const speaker = (words, greeting) => {
   const output = [];
   words.forEach(element => {
-    const modified = greeting(element);
-    output.push(modified);
+    const modified = greeting(element); // pass element through greeting callback function
+    output.push(modified); // push modified element into the array
   });
   return output;
 };
@@ -92,11 +92,14 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
