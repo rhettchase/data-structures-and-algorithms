@@ -151,8 +151,7 @@ const fizzbuzz = (arr) => {
       output.push("Fizz Buzz");
     } else if (element % 3 === 0) {
       output.push("Fizz");
-    }
-    else if (element % 5 === 0) {
+    } else if (element % 5 === 0) {
       output.push("Buzz");
     } else {
       output.push(element);
