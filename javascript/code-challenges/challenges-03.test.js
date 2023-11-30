@@ -36,7 +36,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  return arr.filter((word) => word.includes('and'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  return arr.filter((num => num % 2 === 1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,8 +60,9 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter((value) => !forbiddenValues.includes(value));
 };
+// filter callback checks if each element in the arr array is NOT included in the forbiddenValues array, and only those elements are included in the result.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
