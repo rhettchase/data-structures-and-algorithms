@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
 /* ------------------------------------------------------------------------------------------------
 These objects and arrays are global and will be used for each assignment. DO NOT ALTER THEM
 ------------------------------------------------------------------------------------------------ */
 
-const people = ['Kookla', 'Fran', 'Ollie'];
+const people = ["Kookla", "Fran", "Ollie"];
 
 const stuff = {
-  tv: 'huge',
-  radio: 'old',
+  tv: "huge",
+  radio: "old",
   toys: 57,
-  toothbrush: 'frayed',
-  cars: ['Toyota', 'Mazda']
-}
+  toothbrush: "frayed",
+  cars: ["Toyota", "Mazda"],
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
@@ -24,19 +24,13 @@ In the addPeople function, use spread and destructuring assignments to:
 
 Prove that the original people array is unchanged
 
-Using spread and destructuring assignment, create a new object called newStuff, which is a copy of the stuff object, with a new car added to the end of the cars array within it
-Create a state object with keys of people and stuff that contain the people and stuff data.
-Do this using object destructuring assignment
-Using spread and destructuring assignments, create a new object called newSate, repeating the newPeople and newStuff steps above but directly within the people and stuff nodes of the state object (don't just spread in newPeople and newStuff)
-Ensure that the original people, stuff, and state are unchanged.
-
 ------------------------------------------------------------------------------------------------ */
 
 const addPeople = (arr) => {
   console.log(arr);
-  let newPeople = [...arr];
-  newPeople.push('Garfield');
-  newPeople.unshift('Odie');
+  let newPeople = ["Odie", ...arr, "Garfield"]; // using destructuring
+  // newPeople.push('Garfield');
+  // newPeople.unshift('Odie');
   return newPeople;
 };
 
@@ -50,23 +44,15 @@ In the setSate function, use spread and destructuring assignments to:
 
 Ensure that the original people array and stuff objects are unchanged
 
-Using spread and destructuring assignments, create a new object called newSate, repeating the newPeople and newStuff steps above but directly within the people and stuff nodes of the state object (don't just spread in newPeople and newStuff)
-Prove that the original people, stuff, and state are unchanged.
-
 ------------------------------------------------------------------------------------------------ */
 
 const setState = (arr, obj) => {
-  return {
+  const newState = {
     people: [...arr],
-    stuff: {...obj}
-  }
+    stuff: { ...obj },
+  };
+  return newState;
 };
-
-const newSate = {
-  people:[...people],
-  stuff: {...stuff}
-}
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -84,16 +70,16 @@ Ensure that the original people array and stuff objects are unchanged
 ------------------------------------------------------------------------------------------------ */
 
 const newState = (arr, obj) => {
-  const newPeople =[...arr];
-  const newStuff = {...obj};
-  newStuff.cars = [...newStuff.cars, 'Ford']; // Add a new car ("Ford") to the list of cars
-  newStuff.toothbrush = 'brand new';
+  const newPeople = [...arr];
+  const newStuff = { ...obj };
+  newStuff.cars = [...newStuff.cars, "Ford"]; // Add a new car ("Ford") to the list of cars
+  newStuff.toothbrush = "brand new";
   newStuff.toys += 1;
 
   const newState = {
     people: newPeople,
     stuff: newStuff,
-  }
+  };
   return newState;
 };
 
@@ -102,7 +88,6 @@ const updatedState = newState(people, stuff);
 console.log("Original people array:", people);
 console.log("Original stuff object:", stuff);
 console.log("Updated state:", updatedState);
-
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -114,28 +99,27 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-03.test.js
 ------------------------------------------------------------------------------------------------ */
 
-
-describe('Testing challenge 1', () => {
-  test('It should return a copy of the people array with 2 new values', () => {
-    const orig = ['Kookla', 'Fran', 'Ollie'];
-    const expected = ['Odie', 'Kookla', 'Fran', 'Ollie', 'Garfield'];
+describe("Testing challenge 1", () => {
+  test("It should return a copy of the people array with 2 new values", () => {
+    const orig = ["Kookla", "Fran", "Ollie"];
+    const expected = ["Odie", "Kookla", "Fran", "Ollie", "Garfield"];
     const copy = addPeople(people);
     expect(copy).toStrictEqual(expected);
     expect(orig).toStrictEqual(people);
   });
 });
 
-describe('Testing challenge 2', () => {
-  test('It should return a state object with 2 keys', () => {
-    const originalPeople = ['Kookla', 'Fran', 'Ollie'];
+describe("Testing challenge 2", () => {
+  test("It should return a state object with 2 keys", () => {
+    const originalPeople = ["Kookla", "Fran", "Ollie"];
     const originalStuff = {
-      tv: 'huge',
-      radio: 'old',
+      tv: "huge",
+      radio: "old",
       toys: 57,
-      toothbrush: 'frayed',
-      cars: ['Toyota', 'Mazda']
-    }
-    const expected = {people: originalPeople, stuff: originalStuff};
+      toothbrush: "frayed",
+      cars: ["Toyota", "Mazda"],
+    };
+    const expected = { people: originalPeople, stuff: originalStuff };
     const copy = setState(people, stuff);
     expect(copy).toStrictEqual(expected);
     expect(originalPeople).toStrictEqual(people);
@@ -143,26 +127,26 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
-  test('It should return a state object with 2 keys and new values', () => {
-    const originalPeople = ['Kookla', 'Fran', 'Ollie'];
+describe("Testing challenge 3", () => {
+  test("It should return a state object with 2 keys and new values", () => {
+    const originalPeople = ["Kookla", "Fran", "Ollie"];
     const originalStuff = {
-      tv: 'huge',
-      radio: 'old',
+      tv: "huge",
+      radio: "old",
       toys: 57,
-      toothbrush: 'frayed',
-      cars: ['Toyota', 'Mazda']
-    }
+      toothbrush: "frayed",
+      cars: ["Toyota", "Mazda"],
+    };
     const expected = {
-      people: ['Kookla', 'Fran', 'Ollie'],
+      people: ["Kookla", "Fran", "Ollie"],
       stuff: {
-        tv: 'huge',
-        radio: 'old',
+        tv: "huge",
+        radio: "old",
         toys: 58,
-        toothbrush: 'brand new',
-        cars: ['Toyota', 'Mazda', 'Ford']
-      }
-    }
+        toothbrush: "brand new",
+        cars: ["Toyota", "Mazda", "Ford"],
+      },
+    };
     const copy = newState(people, stuff);
     expect(copy).toStrictEqual(expected);
     expect(originalPeople).toStrictEqual(people);

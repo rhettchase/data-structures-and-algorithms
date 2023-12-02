@@ -1,7 +1,7 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      'challenges-03.test.js',
+      'challenges-05.test.js',
       'jest.config.js',
     ],
 

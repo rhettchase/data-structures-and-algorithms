@@ -1,5 +1,5 @@
 module.exports = {
   testEnvironment: 'node',
-  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+  testMatch: ['**/__test__/**/*.js', '**/?(*.)+(spec|test).js'],
   // Other Jest configurations...
 };
