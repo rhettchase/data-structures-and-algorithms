@@ -1,21 +1,16 @@
 module.exports = function (wallaby) {
   return {
-    files: [
-      'challenges-05.test.js',
-      'jest.config.js',
-    ],
+    files: ["challenges-06.test.js", "jest.config.js"],
 
     runAllTestsWhenNoAffectedTests: true,
 
-    tests: [
-      'challenges-03.test.js',
-    ],
+    tests: ["challenges-06.test.js"],
 
-    testFramework: 'jest',
+    testFramework: "jest",
 
     env: {
-      type: 'node',
-      runner: 'node',
+      type: "node",
+      runner: "node",
     },
 
     setup: function (wallaby) {
