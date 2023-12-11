@@ -22,11 +22,8 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(callback(arr[i]));
-  }
-  return newArr;
+  return arr.map(callback); // since upper takes in animal and returns animal in uppercase form, the same as the below
+  // return arr.map(animal => callback(animal));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,17 +35,7 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-  return arr.sort(function (a, b) {
-    // Compare names with case sensitivity
-    if (a < b) {
-      return -1;
-    } else if (a > b) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
-
+  return arr.sort(); // default for sort is a - b
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,16 +47,20 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
-  return arr.sort(function (a, b) {
-    // Compare numbers
-    if (a < b) {
-      return -1;
-    } else if (a > b) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+  return arr.sort((a, b) => a - b);
+
+  // If the result is negative, a comes before b; if positive, b comes before a; if zero, their order remains unchanged.
+
+  // function (a, b) {
+  //   // Compare numbers
+  //   if (a < b) {
+  //     return -1;
+  //   } else if (a > b) {
+  //     return 1;
+  //   } else {
+  //     return 0;
+  //   }
+  // });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -270,7 +261,7 @@ describe("Testing challenge 1", () => {
 
 describe("Testing challenge 2", () => {
   test("It should return an array of names sorted alphabetically", () => {
-    expect(sortNames(["able", "Bob"])[0]).toStrictEqual("Bob", "able");
+    expect(sortNames(["able", "Bob"])[0]).toStrictEqual("Bob");
   });
 });
 
