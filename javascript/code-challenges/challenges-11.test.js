@@ -70,22 +70,9 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  if (!phoneNumbers || !Array.isArray(phoneNumbers)) {
-    // Handle invalid input
-    return [];
-  }
-
-  return phoneNumbers.map((phoneNumber) => {
-    if (typeof phoneNumber !== 'string' || phoneNumber.length !== 14) {
-      // Skip invalid phone numbers
-      return '';
-    }
-
-    // Extract digits from the phone number
-    const digitsOnly = phoneNumber.replace(/\D/g, '');
-    return digitsOnly;
-  });
+  return arr.map((str) => str.replace(/\D/g, ''));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
