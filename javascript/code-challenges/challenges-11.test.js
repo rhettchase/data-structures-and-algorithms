@@ -70,7 +70,21 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  if (!phoneNumbers || !Array.isArray(phoneNumbers)) {
+    // Handle invalid input
+    return [];
+  }
+
+  return phoneNumbers.map((phoneNumber) => {
+    if (typeof phoneNumber !== 'string' || phoneNumber.length !== 14) {
+      // Skip invalid phone numbers
+      return '';
+    }
+
+    // Extract digits from the phone number
+    const digitsOnly = phoneNumber.replace(/\D/g, '');
+    return digitsOnly;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +96,15 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  if (typeof str !== 'string') {
+    // Handle invalid input
+    return '';
+  }
+
+  return str
+    .split('')
+    .filter((_, index) => index % 2 !== 0)
+    .join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +114,12 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  if (!Array.isArray(arr)) {
+    // Handle invalid input
+    return false;
+  }
+
+  return arr.every((str) => typeof str === 'string' && str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
