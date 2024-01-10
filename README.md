@@ -22,4 +22,5 @@ To run your tests
 
 #### Table of Contents
 
-- [Array Reverse](./python/docs/array_reverse/README.md)
+- [01: Array Reverse](./python/docs/array_reverse/README.md)
+- [02: Array Insert Shift](./python/docs/array_insert_shift/README.md)
