@@ -2,7 +2,7 @@
 <!-- Description of the challenge -->
 Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
-Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
+Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge.
 
 ## Examples
 
@@ -53,6 +53,5 @@ print(reverseArray([1, 2, 3, 4, 5]))
 # [5, 4, 3, 2, 1]
 # [5, 4, 3, 2, 1]
 # output: [5, 4, 3, 2, 1]
-
 
 ```
