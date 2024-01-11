@@ -15,12 +15,8 @@ Output: `-1`
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![Array Binary Search WhiteBoard](Array_Binary_Search_Whiteboard.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
-
-
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
+I developed the algorithm to utilize the left, right and middle indices. It compares the target value to the middle element of the array. It then iterates and compares the middle value to the target value, adjusting the left index and right index based on if the target value is greater than or less than the index. If the search is unsuccessful, it returns -1.
