@@ -4,8 +4,6 @@ Create a Linked List class. Within your Linked List class, include a head proper
 
 Include the following methods: `insert`, `includes`, `to string`
 
-## Examples
-
 `insert`
 
 - Arguments: value
@@ -18,10 +16,27 @@ Include the following methods: `insert`, `includes`, `to string`
 - Returns: Boolean
   - Indicates whether that value exists as a Node’s value somewhere within the list.
 
-`__str__`
+`to string`
 
 - Arguments: none
 - Returns: a string representing all the values in the Linked List, formatted as: `"{ a } -> { b } -> { c } -> NULL"`
+
+## Examples
+
+```python
+my_list = LinkedList()
+my_list.insert("apple")
+my_list.insert("banana")
+
+# ['apple', 'banana']
+
+my_list.includes("banana")
+# True
+
+str(my_list)
+# { None } -> { apple } -> { banana } -> NULL
+
+```
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
