@@ -29,26 +29,32 @@ class LinkedList:
         return False
 
     def display(self):
-        nodes = []
+        if self.head is None:
+            return "NULL"
+
         current = self.head
-        while current.next is not None:
-            current = current.next
+        nodes = []
+        while current is not None:
             nodes.append(current.value)
+            current = current.next
         print(nodes)
 
 
     def __str__(self):
         if self.head is None:
             return "NULL"
-        
+
         current = self.head # start from first actual element
         nodes_str = []
+        str_formatted = ""
 
         while current is not None:
             node_str = f"{{ {current.value} }}"
             nodes_str.append(node_str)
+            print(nodes_str)
             current = current.next
-        return " -> ".join(nodes_str) + " -> NULL"
+        str_formatted = " -> ".join(nodes_str) + " -> NULL"
+        return str_formatted
 
     def __repr__(self):
         current = self.head
