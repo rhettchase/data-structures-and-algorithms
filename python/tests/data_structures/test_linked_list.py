@@ -73,3 +73,11 @@ def test_includes_false():
     linked_list.insert("banana")
 
     assert not linked_list.includes("cucumber")
+
+# can properly return a collection of all the values that exist in the linked list
+
+def test_values_exist():
+    linked_list = LinkedList()
+    linked_list.insert("apple")
+    linked_list.insert("banana")
+    assert linked_list.get_values() == ['banana', 'apple']

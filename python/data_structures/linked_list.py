@@ -28,7 +28,7 @@ class LinkedList:
             current = current.next
         return False
 
-    def display(self):
+    def get_values(self):
         if self.head is None:
             return "NULL"
 
@@ -38,6 +38,7 @@ class LinkedList:
             nodes.append(current.value)
             current = current.next
         print(nodes)
+        return(nodes)
 
 
     def __str__(self):
@@ -71,7 +72,7 @@ class LinkedList:
 my_list = LinkedList()
 my_list.insert("apple")
 my_list.insert("banana")
-my_list.display()
+my_list.get_values()
 
 print("str:", str(my_list))
 print("repr:", repr(my_list))
