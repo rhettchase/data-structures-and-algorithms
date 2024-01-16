@@ -26,4 +26,4 @@ To run your tests
 - [02: Array Insert Shift](./python/docs/array_insert_shift/README.md)
 - [03: Array Binary Search](./python/docs/array_binary_search/README.md)
 - [04: Array Matrix Sum](./python/docs/array_matrix_sum/README.md)
-- [05: Linked List DS](./python/docs/linked_list/README.md)
+- [05: Singly Linked List DS Implementation](./python/docs/linked_list/README.md)
