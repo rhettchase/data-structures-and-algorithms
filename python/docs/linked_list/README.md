@@ -1,4 +1,4 @@
-# Linked List
+# Singly Linked List Implementation
 <!-- Description of the challenge -->
 Create a Linked List class. Within your Linked List class, include a head property. Upon instantiation, an empty Linked List should be created.
 
@@ -35,7 +35,6 @@ my_list.includes("banana")
 
 str(my_list)
 # { banana } -> { apple } -> NULL
-
 ```
 
 ## Whiteboard Process
