@@ -96,6 +96,29 @@ class LinkedList:
             # If the target node is not found, raise TargetError
             raise TargetError("Target value not found in the list")
 
+    def insert_after(self, value, new_value):
+        # create new node
+        new_node = Node(new_value)
+
+        # If the list is empty, raise TargetError
+        if self.head is None:
+            raise TargetError("Cannot insert after in an empty list")
+
+        # Traverse the list to find the target node
+        current = self.head
+        while current is not None and current.value != value:
+            current = current.next
+
+        # If the target node is found, insert the new node after it
+        if current is not None:
+            new_node.next = current.next
+            current.next = new_node
+        # If the target node is not found, return the list as is
+        else:
+            # If the target node is not found, raise TargetError
+            raise TargetError("Target value not found in the list")
+
+
     def __str__(self):
         if self.head is None:
             return "NULL"
