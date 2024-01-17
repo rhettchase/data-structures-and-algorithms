@@ -9,13 +9,13 @@ Add the following methods to the LinkedList class: `append`, `insert before`, `i
 
 `insert before`
 
-- arguments: value, new value
-- adds a new node with the given new value immediately before the first node that has the value specified
+- arguments: target value, new value
+- adds a new node with the given new value immediately before the first node that has the target value specified
 
 `insert after`
 
-- arguments: value, new value
-- adds a new node with the given new value immediately after the first node that has the value specified
+- arguments: target value, new value
+- adds a new node with the given new value immediately after the first node that has the target value specified
 
 ## Examples
 
@@ -73,27 +73,7 @@ class LinkedList:
 
     ....other methods
 
-    def append(self, value):
-        # create new node
-        new_node = Node(value)
-
-        # If the list is empty, set the new node as the head and return
-        if self.head is None:
-            self.head = new_node
-            return
-
-        # Start with the head node
-        current = self.head
-
-        # Traverse to the end of the list
-        # The loop will exit with 'current' being the last node
-        while current.next is not None:
-            current = current.next
-
-        # Attach the new node at the end of the list
-        current.next = new_node
-
-    def insert_before(self, value, new_value):
+    def insert_before(self, target_value, new_value):
         # create new node
         new_node = Node(new_value)
 
@@ -102,14 +82,14 @@ class LinkedList:
             raise TargetError("Cannot insert before in an empty list")
 
         # If the head is the target node, insert the new node before head
-        if self.head.value == value:
+        if self.head.value == target_value:
             new_node.next = self.head
             self.head = new_node
             return
 
          # Traverse the list to find the node before the target node
         current = self.head
-        while current.next is not None and current.next.value != value:
+        while current.next is not None and current.next.value != target_value:
             current = current.next
 
         # If the target node is found, insert the new node before it
@@ -121,7 +101,7 @@ class LinkedList:
             # If the target node is not found, raise TargetError
             raise TargetError("Target value not found in the list")
 
-    def insert_after(self, value, new_value):
+    def insert_after(self, target_value, new_value):
         # create new node
         new_node = Node(new_value)
 
@@ -131,7 +111,7 @@ class LinkedList:
 
         # Traverse the list to find the target node
         current = self.head
-        while current is not None and current.value != value:
+        while current is not None and current.value != target_value:
             current = current.next
 
         # If the target node is found, insert the new node after it
