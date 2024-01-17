@@ -27,3 +27,4 @@ To run your tests
 - [03: Array Binary Search](./python/docs/array_binary_search/README.md)
 - [04: Array Matrix Sum](./python/docs/array_matrix_sum/README.md)
 - [05: Singly Linked List DS Implementation](./python/docs/linked_list/README.md)
+- [06: Linked List Insertions](./python/docs/linked_list_insertions/README.md)
