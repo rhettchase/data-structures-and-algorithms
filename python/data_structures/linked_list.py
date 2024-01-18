@@ -134,7 +134,7 @@ class LinkedList:
         print(length)
 
         # Check if k is larger than or equal to the length of the list
-        if k >= length:
+        if k > length - 1:
             raise TargetError("k is larger than the length of the list")
 
         # Find the (length-k-1)th node from the start
@@ -180,13 +180,11 @@ my_list = LinkedList()
 my_list.insert("apple")
 my_list.insert("banana")
 my_list.insert("cucumbers")
-print(my_list.kth_from_end(0))
+print(my_list.kth_from_end(2))
 
 
 print("str:", str(my_list))
 print("repr:", repr(my_list))
-
-# print("target value included:", my_list.includes("banana"))
 
 class TargetError(Exception):
     pass
