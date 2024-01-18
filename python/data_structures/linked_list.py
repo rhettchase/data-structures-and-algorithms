@@ -69,55 +69,53 @@ class LinkedList:
         current.next = new_node
 
     def insert_before(self, target_value, new_value):
-        # create new node
-        new_node = Node(new_value)
-
-        # If the list is empty, raise TargetError
+        # Check if the list is empty
         if self.head is None:
             raise TargetError("Cannot insert before in an empty list")
 
-        # If the head is the target node, insert the new node before head
+        # Handle the special case where the head is the target node
         if self.head.value == target_value:
+            new_node = Node(new_value)
             new_node.next = self.head
             self.head = new_node
             return
 
-         # Traverse the list to find the node before the target node
+        # Traverse the list to find the node before the target node
         current = self.head
-        while current.next is not None and current.next.value != target_value:
-            current = current.next
+        while current.next:
+            if current.next.value == target_value:
+                new_node = Node(new_value)
+                new_node.next = current.next
+                current.next = new_node
+                return
+            else:
+                current = current.next
 
-        # If the target node is found, insert the new node before it
-        if current.next is not None:
-            new_node.next = current.next
-            current.next = new_node
-        # If the target node is not found, return the list as is
-        else:
-            # If the target node is not found, raise TargetError
-            raise TargetError("Target value not found in the list")
+        # If the target node is not found, raise TargetError
+        raise TargetError("Target value not found in the list")
 
     def insert_after(self, target_value, new_value):
-        # create new node
-        new_node = Node(new_value)
-
-        # If the list is empty, raise TargetError
+         # Check if the list is empty
         if self.head is None:
             raise TargetError("Cannot insert after in an empty list")
 
         # Traverse the list to find the target node
         current = self.head
-        while current is not None and current.value != target_value:
+        while current:
+            # If the target node is found, insert the new node after it
+            if current.value == target_value:
+                new_node = Node(new_value)
+                new_node.next = current.next
+                current.next = new_node
+                return
             current = current.next
 
-        # If the target node is found, insert the new node after it
-        if current is not None:
-            new_node.next = current.next
-            current.next = new_node
-        # If the target node is not found, return the list as is
-        else:
-            # If the target node is not found, raise TargetError
-            raise TargetError("Target value not found in the list")
+        # If the target node is not found, raise TargetError
+        raise TargetError("Target value not found in the list")
+       
 
+    def kth_from_end():
+        pass
 
     def __str__(self):
         if self.head is None:
