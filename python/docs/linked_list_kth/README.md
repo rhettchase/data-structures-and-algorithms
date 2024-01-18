@@ -1,21 +1,11 @@
-# Linked List Insertions
+# Linked List kth From End
 <!-- Description of the challenge -->
-Add the following methods to the LinkedList class: `append`, `insert before`, `insert after`
+Add the following method to the LinkedList class: `kth from end`
 
-`append`
+`kth from end`
 
-- arguments: new value
-- adds a new node with the given value to the end of the list
-
-`insert before`
-
-- arguments: target value, new value
-- adds a new node with the given new value immediately before the first node that has the target value specified
-
-`insert after`
-
-- arguments: target value, new value
-- adds a new node with the given new value immediately after the first node that has the target value specified
+- argument: a number, `k`, as a parameter.
+- Return the node’s value that is `k` places from the tail of the linked list.
 
 ## Examples
 

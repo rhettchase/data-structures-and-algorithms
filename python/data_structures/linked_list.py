@@ -112,10 +112,42 @@ class LinkedList:
 
         # If the target node is not found, raise TargetError
         raise TargetError("Target value not found in the list")
-       
 
-    def kth_from_end():
-        pass
+    def get_length(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+    def kth_from_end(self, k):
+        if self.head is None:
+            raise TargetError("Empty list")
+
+        # Check if k is negative
+        if k < 0:
+            raise TargetError("k must be a non-negative integer")
+
+        # Use get_length to determine the length of the list
+        length = self.get_length()
+        print(length)
+
+        # Check if k is larger than or equal to the length of the list
+        if k >= length:
+            raise TargetError("k is larger than the length of the list")
+
+        # Find the (length-k-1)th node from the start
+        target_index = length - 1 - k
+        current = self.head
+        for i in range(target_index):
+            current = current.next
+
+        return current.value
+
+
+
+
 
     def __str__(self):
         if self.head is None:
@@ -128,7 +160,6 @@ class LinkedList:
         while current is not None:
             node_str = f"{{ {current.value} }}"
             nodes_str.append(node_str)
-            print(nodes_str)
             current = current.next
         str_formatted = " -> ".join(nodes_str) + " -> NULL"
         return str_formatted
@@ -148,8 +179,9 @@ class LinkedList:
 my_list = LinkedList()
 my_list.insert("apple")
 my_list.insert("banana")
-my_list.insert_before("apple", "cucumber")
-# my_list.get_values()
+my_list.insert("cucumbers")
+print(my_list.kth_from_end(0))
+
 
 print("str:", str(my_list))
 print("repr:", repr(my_list))
