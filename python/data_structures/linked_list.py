@@ -176,15 +176,15 @@ class LinkedList:
 
 
 
-my_list = LinkedList()
-my_list.insert("apple")
-my_list.insert("banana")
-my_list.insert("cucumbers")
-print(my_list.kth_from_end(2))
+# my_list = LinkedList()
+# my_list.insert("apple")
+# my_list.insert("banana")
+# my_list.insert("cucumbers")
+# print(my_list.kth_from_end(2))
 
 
-print("str:", str(my_list))
-print("repr:", repr(my_list))
+# print("str:", str(my_list))
+# print("repr:", repr(my_list))
 
 class TargetError(Exception):
     pass
