@@ -73,8 +73,13 @@ N/A
 
 ## Tests
 
-`pytest -m -k`
+- `pytest -k test_stack.py`
+- `pytest -k test_queue.py`
 
+## Run Code
+
+- `python3 -m data_structures.stack`
+- `python3 -m data_structures.queue`
 
 ## Solution
 
