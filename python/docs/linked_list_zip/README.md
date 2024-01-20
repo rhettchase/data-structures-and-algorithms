@@ -22,7 +22,6 @@ Write a function called zip lists. Zip the two linked lists together into one so
 - list 2: `{5} -> {9} -> null`
 - output: `{1} -> {5} -> {3} -> {9} -> {2} -> null`
 
-
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![Linked List Zip Whiteboard](Linked_Lists_Zip_Whiteboard.png)
@@ -37,7 +36,7 @@ The space complexity is O(1) since the function zips the lists in place without 
 
 ## Solution
 
-[linked_list.py](../../code_challenges/linked_list_zip.py)
+[linked_list_zip.py](../../code_challenges/linked_list_zip.py)
 
 ```python
 def zip_lists(list1, list2):

@@ -29,3 +29,4 @@ To run your tests
 - [05: Singly Linked List DS Implementation](./python/docs/linked_list/README.md)
 - [06: Linked List Insertions](./python/docs/linked_list_insertions/README.md)
 - [07: k-th value from the end of a linked list](./python/docs/linked_list_kth/README.md)
+- [08: Zip two linked Lists](./python/docs/linked_list_zip/README.md)
