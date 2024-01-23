@@ -31,3 +31,4 @@ To run your tests
 - [07: k-th value from the end of a linked list](./python/docs/linked_list_kth/README.md)
 - [08: Zip two linked Lists](./python/docs/linked_list_zip/README.md)
 - [10: Stack and Queue DS Implementation](./python/docs/stack_and_queue/README.md)
+- [11: Stack Queue Pseudo](./python/docs/stack_queue_pseudo/README.md)
