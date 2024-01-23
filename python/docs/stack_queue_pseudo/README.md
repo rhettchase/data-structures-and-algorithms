@@ -32,7 +32,7 @@ NOTE: The Stack instances have only push, pop, and peek methods. You should use 
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![Stack Queue Pseudo Whiteboard](Stack_Queue_Pseudo_Whiteboard.png)
 
 ## Approach & Efficiency
 
