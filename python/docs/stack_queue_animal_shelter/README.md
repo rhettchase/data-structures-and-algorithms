@@ -103,33 +103,39 @@ class AnimalShelter:
     def __repr__(self):
         return f"AnimalShelter instance."
 
-class Dog:
+class Animal:
     """
-    A class to represent a Dog.
+    A class to represent an Animal.
+
+    Attributes:
+    name(str): type of animal (dog)
+    """
+    def __init__(self, name="unknown"):
+        self.name = name
+
+class Dog(Animal):
+    """
+    A class to represent a Dog. Inherits attributes from Animal class.
 
     Attributes:
     species(str): type of animal (dog)
-    name(str): name of dog
     """
-    def __init__(self, species="dog", name="unknown"):
+    def __init__(self, species="dog"):
         self.species = species
-        self.name = name
 
     def __repr__(self):
         return f"Dog instance. Name = {self.name}. Species = {self.species}"
 
 
-class Cat:
+class Cat(Animal):
     """
     A class to represent a Cat.
 
     Attributes:
     species(str): type of animal (cat)
-    name(str): name of cat
     """
-    def __init__(self, species="dog", name="unknown"):
+    def __init__(self, species="cat"):
         self.species = species
-        self.name = name
 
     def __repr__(self):
         return f"Cat instance. Name = {self.name}. Species = {self.species}"
