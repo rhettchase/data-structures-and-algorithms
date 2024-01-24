@@ -25,18 +25,11 @@ class AnimalShelter:
         """
         Responsible for adding an animal to the appropriate queue (either the dog queue or the cat queue) while maintaining the order of arrival.
         """
-        if isinstance(animal, Dog) or isinstance(animal, Cat):
-            # Create a tuple with the animal and its order value
-            animal_order_pair = (animal, self.order)
-
-            # Enqueue the animal_order_pair to the respective queue
-            if isinstance(animal, Dog):
-                self.dog_queue.append(animal_order_pair)
-            else:
-                self.cat_queue.append(animal_order_pair)
-
-            # Update the order counter
-            self.order += 1
+        if isinstance(animal, Dog):
+            self.dog_queue.enqueue((animal, self.order))
+        elif isinstance(animal, Cat):
+            self.cat_queue.enqueue((animal, self.order))
+        self.order += 1  # Increment the order when any animal is enqueued
 
     def dequeue(self, preference=None):
         """
@@ -63,33 +56,39 @@ class AnimalShelter:
     def __repr__(self):
         return f"AnimalShelter instance."
 
-class Dog:
+class Animal:
     """
-    A class to represent a Dog.
+    A class to represent an Animal.
+
+    Attributes:
+    name(str): type of animal (dog)
+    """
+    def __init__(self, name="unknown"):
+        self.name = name
+
+class Dog(Animal):
+    """
+    A class to represent a Dog. Inherits attributes from Animal class.
 
     Attributes:
     species(str): type of animal (dog)
-    name(str): name of dog
     """
-    def __init__(self, species="dog", name="unknown"):
+    def __init__(self, species="dog"):
         self.species = species
-        self.name = name
 
     def __repr__(self):
         return f"Dog instance. Name = {self.name}. Species = {self.species}"
 
 
-class Cat:
+class Cat(Animal):
     """
     A class to represent a Cat.
 
     Attributes:
     species(str): type of animal (cat)
-    name(str): name of cat
     """
-    def __init__(self, species="dog", name="unknown"):
+    def __init__(self, species="cat"):
         self.species = species
-        self.name = name
 
     def __repr__(self):
         return f"Cat instance. Name = {self.name}. Species = {self.species}"
