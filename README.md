@@ -32,3 +32,4 @@ To run your tests
 - [08: Zip two linked Lists](./python/docs/linked_list_zip/README.md)
 - [10: Stack and Queue DS Implementation](./python/docs/stack_and_queue/README.md)
 - [11: Stack Queue Pseudo](./python/docs/stack_queue_pseudo/README.md)
+- [12: Stack Queue Animal Shelter](./python/docs/stack_queue_animal_shelter/README.md)

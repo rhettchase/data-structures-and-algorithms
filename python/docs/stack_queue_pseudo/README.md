@@ -1,4 +1,4 @@
-# Linked List kth From End
+# Stack Queue Pseudo
 <!-- Description of the challenge -->
 Create a new class called pseudo queue without using an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below). Internally, utilize 2 Stack instances to create and manage the queue
 
