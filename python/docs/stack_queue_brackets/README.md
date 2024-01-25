@@ -37,7 +37,7 @@ output: `FALSE`
 
 ## Tests
 
-`pytest -k test_stack_queue_animal_shelter.py`
+`pytest -k test_stack_queue_brackets.py`
 
 ## Run Code
 
