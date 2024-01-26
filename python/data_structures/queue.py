@@ -1,4 +1,4 @@
-from data_structures.linked_list import Node, LinkedList
+from data_structures.linked_list import Node
 from data_structures.invalid_operation_error import InvalidOperationError
 
 class Queue:
@@ -17,13 +17,13 @@ class Queue:
 
         # if the Queue is empty
         if self.is_empty():
-            self.front = new_node
+           self.front = new_node
+           self.back = new_node
+        else:
+            # Queue isn't empty
+            self.back.next = new_node
+            # point the queue's self.back to our new node. Update the pointer!
             self.back = new_node
-
-        # Queue isn't empty
-        self.back.next = new_node
-        # point the queue's self.back to our new node. Update the pointer!
-        self.back = new_node
 
     def dequeue(self):
         """
@@ -65,4 +65,4 @@ class Queue:
         if self.front is None:
             return True
         else:
-            False
+            return False
