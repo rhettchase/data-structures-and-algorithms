@@ -7,7 +7,7 @@ def multi_bracket_validation(input_string):
 
     # Iterating through each character in the input string
     for char in input_string:
-        # If the character is a closing bracket
+        # If the character is a closing bracket (looks at the keys)
         if char in brackets:
             # Pop an element from the stack if it's not empty, otherwise assign a dummy value
             top_element = stack.pop() if stack else '#'
