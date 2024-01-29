@@ -1,6 +1,9 @@
 class BinaryTree:
     """
-    Put docstring here
+    Defines Binary Tree class.
+
+    Depth first traversal methods:
+    pre-order
     """
 
     def __init__(self):
@@ -20,10 +23,8 @@ class BinaryTree:
 
         """
 
-        def walk(node):
+        def depth_first_values(root):
             """
-            task is
-
             return my result + left node's result + right node's result
 
             ["a"] + ["b","d","e"] + ["c","f","g"]
@@ -32,50 +33,44 @@ class BinaryTree:
 
             """
 
-            if node is None:
+            if root is None: # base case - check if stack is empty
                 return []
 
-            root_result = [node.value]   # ["a"]
-            left_result = walk(node.left) # [... whatever is collected to left ...] ["b","d","e"]
-            right_result = walk(node.right)# [... whatever is collected to right ...] ["c","f","g"]
+            root_result = [root.value]   # ["a"]
+            left_result = depth_first_values(root.left) # collect left side of tree ["b","d","e"]
+            right_result = depth_first_values(root.right)# collect right side of tree ["c","f","g"]
 
             # ["a"] + ["b","d","e"] + ["c","f","g"]
             return root_result + left_result + right_result
 
 
-        return walk(self.root)
+        return depth_first_values(self.root)
 
     def in_order(self):
         """
         left -> root -> right
-        BUT "root" depends on context
-        It's not necessarily same as root of overall tree
+        traverse left, visit "root" node, visit right
         """
 
-        def walk(node):
+        def depth_first_values(root):
             """
-            task is
-
-            return my result + left node's result + right node's result
-
-            ["a"] + ["b","d","e"] + ["c","f","g"]
-
+            return left node's result + my result + right node's result
+            ["b","d","e"] + ["a"] + ["c","f","g"]
             return List
-
             """
 
-            if node is None:
+            if root is None:
                 return []
 
-            left_result = walk(node.left) # [... whatever is collected to left ...] ["b","d","e"]
-            my_result = [node.value]   # ["a"]
-            right_result = walk(node.right)# [... whatever is collected to right ...] ["c","f","g"]
+            left_result = depth_first_values(root.left) # collect left side of tree ["b","d","e"]
+            my_result = [root.value]   # ["a"]
+            right_result = depth_first_values(root.right)# collect right side of tree ["c","f","g"]
 
             # ["b","d","e"] + ["a"] + ["c","f","g"]
             return left_result + my_result + right_result
 
 
-        return walk(self.root)
+        return depth_first_values(self.root)
 
     def post_order(self):
         """
@@ -84,19 +79,19 @@ class BinaryTree:
         It's not necessarily same as root of overall tree
         """
 
-        def walk(node):
-            if node is None:
+        def depth_first_values(root):
+            if root is None:
                 return []
 
-            left_result = walk(node.left) # [... whatever is collected to left ...] ["b","d","e"]
-            right_result = walk(node.right)# [... whatever is collected to right ...] ["c","f","g"]
-            my_result = [node.value]   # ["a"]
+            left_result = depth_first_values(root.left) # collect left sub-tree ["b","d","e"]
+            right_result = depth_first_values(root.right) # collect right sub-tree ["c","f","g"]
+            my_result = [root.value]   # ["a"]
 
 
             return left_result + right_result + my_result
 
 
-        return walk(self.root)
+        return depth_first_values(self.root)
 
 class Node:
     def __init__(self, value):

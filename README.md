@@ -34,3 +34,4 @@ To run your tests
 - [11: Stack Queue Pseudo](./python/docs/stack_queue_pseudo/README.md)
 - [12: Stack Queue Animal Shelter](./python/docs/stack_queue_animal_shelter/README.md)
 - [13: Stack Queue Brackets](./python/docs/stack_queue_brackets/README.md)
+- [14: Binary Tree DS Implementation](./python/docs/trees/README.md)
