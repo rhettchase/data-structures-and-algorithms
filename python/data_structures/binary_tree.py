@@ -139,6 +139,35 @@ class BinaryTree:
 
         return traverse(self.root)
 
+    def find_maximum_value(self):
+        """
+        Finds the maximum value stored in the binary tree.
+
+        Returns:
+            number: The maximum value found in the tree. Returns None if the tree is empty.
+        """
+
+        def traverse_and_find_max(node):
+            """
+            Helper function to recursively find the maximum value in the tree.
+
+            Args:
+                node (Node): The current node in the traversal.
+
+            Returns:
+                number: The maximum value found in the subtree rooted at the given node.
+            """
+            if node is None: # base case
+                return float('-inf')  # Represent negative infinity when node is None
+
+            # Compare current node's value with the max value in its left and right subtrees
+            left_max = traverse_and_find_max(node.left)
+            right_max = traverse_and_find_max(node.right)
+            return max(node.value, left_max, right_max)
+
+        max_value = traverse_and_find_max(self.root)
+        return max_value if max_value != float('-inf') else None  # Return None if tree is empty
+
 class Node:
     """
     A Node class for the elements of a BinaryTree.
