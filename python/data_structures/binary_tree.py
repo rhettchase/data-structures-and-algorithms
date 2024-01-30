@@ -157,6 +157,7 @@ class BinaryTree:
             Returns:
                 number: The maximum value found in the subtree rooted at the given node.
             """
+            
             if node is None: # base case
                 return float('-inf')  # Represent negative infinity when node is None
 
