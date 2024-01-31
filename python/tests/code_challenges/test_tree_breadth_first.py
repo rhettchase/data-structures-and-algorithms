@@ -3,7 +3,7 @@ from data_structures.binary_tree import BinaryTree, Node
 from code_challenges.tree_breadth_first import breadth_first
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_exists():
     assert breadth_first
 
