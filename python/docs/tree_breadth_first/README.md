@@ -40,7 +40,7 @@ See Whiteboard
 
 ## Solution
 
-[binary_tree.py](../../code_challenges/tree_breadth_first.py)
+[tree_breadth_first.py](../../code_challenges/tree_breadth_first.py)
 
 ```python
 def breadth_first(tree):
