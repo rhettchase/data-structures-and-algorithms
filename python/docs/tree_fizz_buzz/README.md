@@ -27,16 +27,44 @@ See Tests and Whiteboard
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![Tree Fizz Buzz Whiteboard](./Tree_Fizz_Buzz_Whiteboard.png)
 
 ## Approach & Efficiency
 
-
+- clone tree
+- recursively modify child nodes, starting from root (based on FizzBuzz Logic) --> for child in node.children
+- Time Complexity: O(n), each node in the tree is visited exactly once, and for each node a constant amount of work is done (checking divisibility and modifying value)
+- Space Complexity: O(n)
+  - call stack: proportional for height of tree - O(n) for worse case (unbalanced tree). For balanced K-ary tree, height of tree would be O(logkn)
+  - storing the new tree: O(n)
 
 ## Solution
 
 [tree_fizz_buzz.py](../../code_challenges/tree_fizz_buzz.py)
 
 ```python
+def fizz_buzz_tree(original_tree):
+    if original_tree.root is None:
+        return original_tree
+    new_tree = original_tree.clone()
 
+    def modify_nodes(node):
+        if node is None: # base case
+            return
+
+        # apply FizzBuzz logic to node's value
+        if node.value % 3 == 0 and node.value % 5 == 0:
+            node.value = "FizzBuzz"
+        elif node.value % 3 == 0:
+            node.value = "Fizz"
+        elif node.value % 5 == 0:
+            node.value = "Buzz"
+        else:
+            node.value = str(node.value)
+
+        for child in node.children:
+            modify_nodes(child) # recursively modify child nodes
+
+    modify_nodes(new_tree.root) # start modification from root of new tree
+    return new_tree
 ```
