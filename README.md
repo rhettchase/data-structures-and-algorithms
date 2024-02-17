@@ -38,3 +38,4 @@ To run your tests
 - [16: Binary Tree Max](./python/docs/tree_max/README.md)
 - [17: Binary Tree Breadth First Traversal](./python/docs/tree_breadth_first/README.md)
 - [18: Tree Fizz Buzz](./python/docs/tree_fizz_buzz/README.md)
+- [30: Hash Table DS Implementation](./python/docs/hashtable/README.md)
