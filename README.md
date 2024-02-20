@@ -39,3 +39,4 @@ To run your tests
 - [17: Binary Tree Breadth First Traversal](./python/docs/tree_breadth_first/README.md)
 - [18: Tree Fizz Buzz](./python/docs/tree_fizz_buzz/README.md)
 - [30: Hash Table DS Implementation](./python/docs/hashtable/README.md)
+- [31: Hash Table Repeated Word](./python/docs/hashtable_repeated_word/README.md)
