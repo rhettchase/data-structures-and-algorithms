@@ -28,16 +28,17 @@ Output:
 
 ## Whiteboard Process
 
-insert whiteboard
+![Hashmap repeated word whiteboard](./hashmap_repeated_word_whiteboard.png)
 
 ## Approach & Efficiency
 
 ### Space Complexity
 
+- O(w): w is the number of words in the input string
 
 ### Time Complexity
 
-
+- O(n): visiting every word once to normalize O(n) and O(w) for checking and setting in the hashtable
 
 ## Tests
 
