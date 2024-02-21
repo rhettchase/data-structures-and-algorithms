@@ -8,14 +8,14 @@ def tree_intersection(tree1, tree2):
     matches = set()
 
     # Populate the hashtable with values from the first binary tree using iterative traversal
-    traverse_and_set_values_iterative(tree1.root, hashtable_for_tree1)
+    _traverse_and_set_values_iterative(tree1.root, hashtable_for_tree1)
 
     # Traverse the second binary tree and find matches using iterative traversal
-    find_matches_iterative(tree2.root, hashtable_for_tree1, matches)
+    _find_matches_iterative(tree2.root, hashtable_for_tree1, matches)
 
     return matches
 
-def find_matches_iterative(root, hashtable, matches):
+def _find_matches_iterative(root, hashtable, matches):
     if not root:
         return
     stack = [root]
@@ -29,7 +29,7 @@ def find_matches_iterative(root, hashtable, matches):
         if current_node.left:
             stack.append(current_node.left)
 
-def traverse_and_set_values_iterative(root, hashtable):
+def _traverse_and_set_values_iterative(root, hashtable):
     if not root:
         return
     stack = [root]
