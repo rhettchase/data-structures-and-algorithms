@@ -128,21 +128,28 @@ class Hashtable:
 
     def _hash(self, key):
         """
-        Add all the key's ASCII values together.
-        Multiply it by a prime number such as 599.
-        Use modulo to get the remainder of the result, when divided by the total size of the array.
-        Arguments: key
-        Returns: Index in the collection for that key
+        Generates a hash value for the given key. The key can be an integer or a string.
+        If the key is an integer, it is directly used in the hash computation.
+        If the key is a string, its characters' ASCII values are summed up.
+        The hash value is obtained by multiplying the sum by a prime number and taking the modulo with the array size.
+
+        Arguments:
+            key: The key to hash, can be an integer or a string.
+        Returns:
+            The index in the array for that key.
         """
+        hash_sum = 0
 
-        index = 0
+        if isinstance(key, int):  # If key is an integer
+            hash_sum = key
+        elif isinstance(key, str):  # If key is a string
+            for char in key:
+                hash_sum += ord(char)
+        else:
+            raise TypeError("Hashtable keys must be either int or str.")
 
-        for char in key:
-            index += ord(char) # add the key's ASCII values together
-
-        index *= 599 # multiply by prime number
-        index = index % self._size # get remainder of the result, when divided by the total size of array
-
+        hash_sum *= 599  # Multiply by a prime number
+        index = hash_sum % self._size  # Use modulo to fit the hash value into the table size
         return index
 
 
