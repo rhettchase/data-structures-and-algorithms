@@ -17,7 +17,7 @@ Output:
 
 ## Whiteboard Process
 
-
+![Tree Intersection Whiteboard](./tree_intersection_whiteboard.png)
 
 ## Approach & Efficiency
 
