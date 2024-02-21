@@ -40,3 +40,4 @@ To run your tests
 - [18: Tree Fizz Buzz](./python/docs/tree_fizz_buzz/README.md)
 - [30: Hash Table DS Implementation](./python/docs/hashtable/README.md)
 - [31: Hash Table Repeated Word](./python/docs/hashtable_repeated_word/README.md)
+- [32: Tree Intersection](./python/docs/tree_intersection/README.md)
