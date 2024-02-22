@@ -35,11 +35,16 @@ Synonyms / Antonyms
    ["fond", "enamored", "averse"],
    ["wrath", "anger", "delight"],
    ["diligent", "employed", "idle"],
-   ["outfit", "garb", NULL],
+   ["outfit", "garb", "NONE"],
    ["guide", "usher","follow"]
 ]
 ```
 
+## Whiteboard Process
+
+![Left Join Whiteboard](hashtable_left_join_whiteboard.png)
+
+## Approach & Efficiency
 
 ### Space Complexity
 
