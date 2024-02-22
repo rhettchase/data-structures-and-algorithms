@@ -18,7 +18,7 @@ Notes:
 
 ### INPUT
 
-Synonyms / Antonymns
+Synonyms / Antonyms
 
 | Key | Value |  | Key | Value |
 | ---- | ---- | ---- | ---- | ---- |
@@ -28,13 +28,11 @@ Synonyms / Antonymns
 | outfit | garb |  | flow | jam |
 | wrath | anger |  | wrath | delight |
 
-
-
 ### OUTPUT
 
 ```python
 [
-   ["font", "enamored", "averse"],
+   ["fond", "enamored", "averse"],
    ["wrath", "anger", "delight"],
    ["diligent", "employed", "idle"],
    ["outfit", "garb", NULL],
@@ -45,9 +43,11 @@ Synonyms / Antonymns
 
 ### Space Complexity
 
+O(n) where n is the number of keys in synonyms hashtable
 
 ### Time Complexity
 
+O(n) where n is the number of keys in the synonyms hashtable
 
 ## Tests
 
