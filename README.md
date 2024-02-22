@@ -41,3 +41,4 @@ To run your tests
 - [30: Hash Table DS Implementation](./python/docs/hashtable/README.md)
 - [31: Hash Table Repeated Word](./python/docs/hashtable_repeated_word/README.md)
 - [32: Tree Intersection](./python/docs/tree_intersection/README.md)
+- [33: HashTable Left Join](./python/code_challenges/hashtable_left_join.py)
